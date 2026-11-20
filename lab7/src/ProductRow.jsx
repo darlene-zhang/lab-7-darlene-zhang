@@ -6,6 +6,7 @@
 // After implementing memo + useCallback in the parent,
 // clicking the favorite button should ONLY re-render the changed row,
 // not all of them.
+import React from "react";
 
 function ProductRow({ product, onToggleFavorite }) {
     console.log("Row render:", product.name);
@@ -24,5 +25,5 @@ function ProductRow({ product, onToggleFavorite }) {
     );
   }
   
-  export default ProductRow;
+  export default React.memo(ProductRow);
   
